@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>
+        a. Criar uma tabela Book com os seguintes campos: title, author, genre, year.<br>
+        b. Inserir os seguintes dados na tabela:<br> 
+        - A divina comedia, Dante Alighieri, comedia, 1320<br>
+        - Guerra e Paz, Liev Tolstoi, romance, 1869<br>
+        - Dom Quixote, Miguel de Cervantes, romance 1615<br>
+        - A cabana, William Young, ficção, 2008<br>
+        c. Realizar as seguintes consultas<br>
+
+        1. Quantidade total de livros<br>
+        <p>{{book1.title__count}}</p>
+
+        2. Lista de livros do mais velho para o mais novo<br>
+        {% for books2 in book2 %}
+        <p>{{books2.title}}, {{books2.years}} </p>
+        {%endfor%}
+
+        3. Ano do livro mais velho<br>
+        <p>{{book3.years__min}}</p>
+
+        4. Ano do livro mais novo<br>
+        <p>{{book4.years__max}}</p>
+
+        5. Titulo do livro com id 2<br> 
+        <p>{{book5.title}}</p>
+
+        6. Titulo dos livros de romance<br>
+        {%for books6 in book6 %}
+        <p>{{books6.title}}</p>
+        {%endfor%}
+
+        7. Titulo dos livros lançados após 1800<br>
+        {%for books7 in book7 %}
+        <p>{{books7.title}}</p>
+        {%endfor%}
+ 
+        8. Quantidade de livros lançados antes de 1500<br>
+        <p>{{book8.title__count}}</p>
+
+        9. Quantidade de gêneros diferentes<br>
+        <p>{{book9}}</p>
+
+        10. Nome do gênero seguido da quantidade de Livros que o gênero possui<br>
+        {% for books10 in book10 %}
+        <p>{{books10.genre}} || {{books10.qt}}</p>
+        {%endfor%}
+
+    </h3>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Listagem de Books</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>title</th>
+                        <th>author</th>
+                        <th>genre</th>
+                        <th>years</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in book %}
+                    <tr>
+                        <td>{{book.title}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.genre}}</td>
+                        <td>{{book.years}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
